@@ -318,10 +318,12 @@ vault → .claude → skills → dbrain-processor → references → about.md
 
 1. В левой панели нажмите на иконку с веткой (Source Control)
 2. Вы увидите список изменённых файлов
-3. Нажмите "+" рядом с "Changes" чтобы добавить все файлы
-4. В поле "Message" напишите: `Initial setup with my goals`
+3. В поле "Message" напишите: `Initial setup with my goals`
 5. Нажмите кнопку "Commit"
-6. Нажмите "Sync Changes" или "Publish Branch"
+6. Нажмите ещё раз на эту же кнопку, но там будет написано "Sync Changes" или "Publish Branch"
+
+ <img width="794" height="1184" alt="Antigravity_27_December_2025_2DT3p7IR" src="https://github.com/user-attachments/assets/f67958e9-8954-4d63-93d8-8cb7792abf3a" />
+
 
 Если спросит логин - введите ваш GitHub логин и пароль (или Personal Access Token).
 
