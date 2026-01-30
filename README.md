@@ -12,6 +12,21 @@
   <img width="350" alt="Telegram_27_December_2025_ALVR9dWM" src="https://github.com/user-attachments/assets/5f76a061-3b46-4857-b638-11783973c0ad" />
 </p>
 
+<p align="center">
+  <a href="https://t.me/aimastersme">
+    <img src="https://img.shields.io/badge/Telegram_канал_автора-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" height="40"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>🔥 Практика применения ИИ в жизни и работе простым языком</b><br>
+  <a href="https://t.me/aimastersme"><b>👉 t.me/aimastersme</b></a>
+</p>
+
+<p align="center">
+  <a href="https://aimasters.me/ru/">🎓 Обучение ИИ для команд →</a>
+</p>
+
 ---
 
 ## Главное перед началом
