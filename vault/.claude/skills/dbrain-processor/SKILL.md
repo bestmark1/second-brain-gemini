@@ -29,24 +29,24 @@ CORRECT:
 
 ## MCP Tools Required
 
-mcp__todoist__add-tasks — Create tasks
-mcp__todoist__find-tasks — Check duplicates
-mcp__todoist__find-tasks-by-date — Check workload
+todoist__add-tasks — Create tasks
+todoist__find-tasks — Check duplicates
+todoist__find-tasks-by-date — Check workload
 
 ## CRITICAL: MCP Tool Usage
 
 **СНАЧАЛА ВЫЗОВИ TOOL. ПОТОМ ДУМАЙ.**
 
 У тебя ЕСТЬ доступ к MCP tools:
-- `mcp__todoist__add-tasks`
-- `mcp__todoist__find-tasks`
-- `mcp__todoist__find-tasks-by-date`
-- `mcp__todoist__complete-tasks`
-- `mcp__todoist__update-tasks`
+- `todoist__add-tasks`
+- `todoist__find-tasks`
+- `todoist__find-tasks-by-date`
+- `todoist__complete-tasks`
+- `todoist__update-tasks`
 
 ### Обязательный алгоритм:
 
-1. ВЫЗОВИ: mcp__todoist__find-tasks-by-date
+1. ВЫЗОВИ: todoist__find-tasks-by-date
    ↓
    Получил результат? → Продолжай
    ↓
@@ -87,7 +87,7 @@ mcp__todoist__find-tasks-by-date — Check workload
 **ОБЯЗАТЕЛЬНО выполни при каждом /process:**
 
 ### 1. Проверь существующие process goals
-Используй mcp__todoist__find-tasks с labels: ["process-goal"]
+Используй todoist__find-tasks с labels: ["process-goal"]
 
 ### 2. Если отсутствуют — создай
 Читай goals/ и генерируй process commitments:

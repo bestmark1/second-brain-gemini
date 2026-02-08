@@ -14,11 +14,11 @@ MCP протокол напрямую иногда отваливается. mcp
 
 ```
 До:
-Claude → MCP Protocol → Todoist MCP Server → Todoist API
+Gemini → MCP Protocol → Todoist MCP Server → Todoist API
          (отваливается)
 
 После:
-Claude → Bash → mcp-cli → Todoist MCP Server → Todoist API
+Gemini → Bash → mcp-cli → Todoist MCP Server → Todoist API
                 (daemon, retry, pooling)
 ```
 
@@ -66,20 +66,20 @@ echo 'export TODOIST_API_KEY="ваш_токен"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### 4. Уберите прямое MCP подключение из Claude
+### 4. Уберите прямое MCP подключение из Gemini
 
 ```bash
 # Удалить прямое MCP подключение
-claude mcp remove todoist
+gemini mcp remove todoist
 ```
 
 Проверить что удалено:
 ```bash
-claude mcp list
+gemini mcp list
 # todoist НЕ должен быть в списке
 ```
 
-Теперь Claude работает через mcp-cli (bash), а не через MCP протокол напрямую.
+Теперь Gemini работает через mcp-cli (bash), а не через MCP протокол напрямую.
 
 ---
 

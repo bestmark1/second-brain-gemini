@@ -12,7 +12,7 @@ Recent issues from the repository (18 total).
 **Labels:** No labels | **Created:** 2025-12-12
 [View on GitHub](https://github.com/Doist/todoist-ai/issues/241)
 
-### #239: server times out frequently, needs frequent reauthentication in claude code
+### #239: server times out frequently, needs frequent reauthentication in gemini cli
 **Labels:** No labels | **Created:** 2025-12-08
 [View on GitHub](https://github.com/Doist/todoist-ai/issues/239)
 
@@ -27,11 +27,11 @@ Recent issues from the repository (18 total).
 **Labels:** No labels | **Closed:** 2025-12-08
 [View on GitHub](https://github.com/Doist/todoist-ai/issues/240)
 
-### #192: Claude Code requires reconnection too frequently
+### #192: Gemini CLI requires reconnection too frequently
 **Labels:** No labels | **Closed:** 2025-11-13
 [View on GitHub](https://github.com/Doist/todoist-ai/issues/192)
 
-### #215: Claude Code : Adding Task "P1" vs reading tasks are inverted
+### #215: Gemini CLI : Adding Task "P1" vs reading tasks are inverted
 **Labels:** No labels | **Closed:** 2025-11-13
 [View on GitHub](https://github.com/Doist/todoist-ai/issues/215)
 
@@ -62,4 +62,3 @@ Recent issues from the repository (18 total).
 ### #136: TypeError: client.getUser is not a function when following Vercel AI SDK example
 **Labels:** No labels | **Closed:** 2025-10-26
 [View on GitHub](https://github.com/Doist/todoist-ai/issues/136)
-

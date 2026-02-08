@@ -11,7 +11,7 @@ from aiogram.types import Message
 from d_brain.bot.formatters import format_process_report
 from d_brain.config import get_settings
 from d_brain.services.git import VaultGit
-from d_brain.services.processor import ClaudeProcessor
+from d_brain.services.processor import GeminiProcessor
 
 router = Router(name="process")
 logger = logging.getLogger(__name__)
@@ -19,14 +19,14 @@ logger = logging.getLogger(__name__)
 
 @router.message(Command("process"))
 async def cmd_process(message: Message) -> None:
-    """Handle /process command - trigger Claude processing."""
+    """Handle /process command - trigger Gemini processing."""
     user_id = message.from_user.id if message.from_user else "unknown"
     logger.info("Process command triggered by user %s", user_id)
 
     status_msg = await message.answer("⏳ Processing... (may take up to 10 min)")
 
     settings = get_settings()
-    processor = ClaudeProcessor(settings.vault_path, settings.todoist_api_key)
+    processor = GeminiProcessor(settings.vault_path, settings.todoist_api_key)
     git = VaultGit(settings.vault_path)
 
     # Run subprocess in thread to avoid blocking event loop

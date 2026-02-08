@@ -123,23 +123,23 @@ npm --version
 
 ---
 
-## Step 8: Install Claude CLI
+## Step 8: Install Gemini CLI
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+# Install Gemini CLI (see official docs for your OS)
 
 # Verify
-which claude
-claude --version
+which gemini
+gemini --version
 
 # Authenticate
-claude auth login
+gemini auth login
 ```
 
-After `claude auth login`:
+After `gemini auth login`:
 1. A URL appears
 2. Copy and open it in browser on your computer
-3. Log in to Anthropic account
+3. Log in to Google account
 4. Authorize access
 5. Return to terminal — it will confirm
 
@@ -471,9 +471,9 @@ sudo journalctl -u d-brain-bot | grep -i error
 ### Processing errors
 
 ```bash
-claude --version
-claude auth status
-claude auth login  # if needed
+gemini --version
+gemini auth status
+gemini auth login  # if needed
 ```
 
 ### Todoist not working

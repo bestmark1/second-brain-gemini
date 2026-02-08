@@ -16,7 +16,7 @@ Curated knowledge that persists across sessions. Layer 2 of Clawdbot memory arch
 ### Tech Stack
 - Languages: [e.g., Python, TypeScript]
 - Frameworks: [e.g., React, FastAPI]
-- Tools: [e.g., Cursor, Claude Code]
+- Tools: [e.g., Cursor, Gemini CLI]
 
 ### Communication Style
 - Preferred response language: [Russian/English/Mixed]

@@ -60,7 +60,7 @@ Apply GTD decision tree:
 
 **Schedule (single task):**
 ```
-mcp__todoist__add-tasks
+todoist__add-tasks
   content: {task}
   dueString: {date}
   priority: {p1-p4}
@@ -80,7 +80,7 @@ mcp__todoist__add-tasks
 
 **Waiting:**
 ```
-mcp__todoist__add-tasks
+todoist__add-tasks
   content: "Waiting: {description}"
   labels: ["waiting"]
   dueString: "in 3 days"  # follow-up

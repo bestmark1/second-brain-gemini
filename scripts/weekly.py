@@ -15,7 +15,7 @@ from aiogram.enums import ParseMode
 
 from d_brain.config import get_settings
 from d_brain.services.git import VaultGit
-from d_brain.services.processor import ClaudeProcessor
+from d_brain.services.processor import GeminiProcessor
 
 logging.basicConfig(
     level=logging.INFO,
@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 async def main() -> None:
     """Generate weekly digest and send to Telegram."""
     settings = get_settings()
-    processor = ClaudeProcessor(settings.vault_path, settings.todoist_api_key)
+    processor = GeminiProcessor(settings.vault_path, settings.todoist_api_key)
     git = VaultGit(settings.vault_path)
 
     logger.info("Starting weekly digest generation...")

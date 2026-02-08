@@ -149,15 +149,15 @@ install_uv() {
 }
 
 #######################################
-# Install Claude Code CLI
+# Install Gemini CLI
 #######################################
-install_claude() {
-    if has_command claude; then
-        success "Claude Code already installed: $(claude --version)"
+install_gemini() {
+    if has_command gemini; then
+        success "Gemini CLI already installed: $(gemini --version)"
     else
-        info "Installing Claude Code CLI..."
-        npm install -g @anthropic-ai/claude-code
-        success "Claude Code installed"
+        warn "Gemini CLI not found."
+        echo "Please install Gemini CLI manually and ensure the 'gemini' command is on PATH."
+        echo ""
     fi
 }
 
@@ -338,24 +338,23 @@ EOF
 }
 
 #######################################
-# Authenticate Claude
+# Authenticate Gemini
 #######################################
-auth_claude() {
+auth_gemini() {
     echo
     echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "${YELLOW}Claude Authentication${NC}"
-    echo "You need Claude Pro subscription (\$20/month) for this to work."
+    echo -e "${YELLOW}Gemini Authentication${NC}"
     echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo
 
-    if claude auth status &>/dev/null; then
-        success "Claude already authenticated"
+    if gemini auth status &>/dev/null; then
+        success "Gemini already authenticated"
     else
-        info "Starting Claude authentication..."
-        echo "A browser window will open. Log in with your Anthropic account."
+        info "Starting Gemini authentication..."
+        echo "A browser window will open. Log in with your Google account."
         echo
-        claude auth login
-        success "Claude authenticated"
+        gemini auth login
+        success "Gemini authenticated"
     fi
 }
 
@@ -511,13 +510,13 @@ main() {
     install_homebrew
     install_dependencies
     install_uv
-    install_claude
+    install_gemini
     clone_repo
     collect_tokens
     create_env
     install_python_deps
     install_mcp_cli
-    auth_claude
+    auth_gemini
     setup_autostart
     start_bot
 }

@@ -1,4 +1,4 @@
-"""Handler for /do command - arbitrary Claude requests."""
+"""Handler for /do command - arbitrary Gemini requests."""
 
 import asyncio
 import logging
@@ -11,7 +11,7 @@ from aiogram.types import Message
 from d_brain.bot.formatters import format_process_report
 from d_brain.bot.states import DoCommandState
 from d_brain.config import get_settings
-from d_brain.services.processor import ClaudeProcessor
+from d_brain.services.processor import GeminiProcessor
 from d_brain.services.transcription import DeepgramTranscriber
 
 router = Router(name="do")
@@ -87,11 +87,11 @@ async def handle_do_input(message: Message, bot: Bot, state: FSMContext) -> None
 
 
 async def process_request(message: Message, prompt: str, user_id: int = 0) -> None:
-    """Process the user's request with Claude."""
+    """Process the user's request with Gemini."""
     status_msg = await message.answer("⏳ Выполняю...")
 
     settings = get_settings()
-    processor = ClaudeProcessor(settings.vault_path, settings.todoist_api_key)
+    processor = GeminiProcessor(settings.vault_path, settings.todoist_api_key)
 
     async def run_with_progress() -> dict:
         task = asyncio.create_task(

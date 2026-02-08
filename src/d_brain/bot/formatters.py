@@ -15,7 +15,7 @@ def sanitize_telegram_html(text: str) -> str:
     Telegram supports: <b>, <i>, <code>, <pre>, <a>, <s>, <u>
 
     Args:
-        text: Raw HTML text from Claude
+        text: Raw HTML text from Gemini
 
     Returns:
         Sanitized HTML safe for Telegram
@@ -148,11 +148,11 @@ def truncate_html(text: str, max_length: int = 4096) -> str:
 def format_process_report(report: dict[str, Any]) -> str:
     """Format processing report for Telegram HTML.
 
-    The report from Claude is expected to be in HTML format.
+    The report from Gemini is expected to be in HTML format.
     We sanitize it to ensure only Telegram-safe tags are used.
 
     Args:
-        report: Processing report from ClaudeProcessor
+        report: Processing report from GeminiProcessor
 
     Returns:
         Formatted HTML message for Telegram

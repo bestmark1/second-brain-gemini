@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# PATH for systemd (claude, uv, npx in ~/.local/bin and node)
+# PATH for systemd (gemini, uv, npx in ~/.local/bin and node)
 export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 export HOME="/home/shima"
 
@@ -31,16 +31,18 @@ CHAT_ID="${ALLOWED_USER_IDS//[\[\]]/}"  # remove brackets from [123456]
 
 echo "=== d-brain processing for $TODAY ==="
 
-# Run Claude from vault/ for context (reads vault/.claude/CLAUDE.md)
+# Run Gemini from vault/ for context (reads vault/.claude/CLAUDE.md)
 cd "$VAULT_DIR"
-REPORT=$(claude --print --dangerously-skip-permissions \
-    --mcp-config "$PROJECT_DIR/mcp-config.json" \
-    -p "Today is $TODAY. Execute daily processing according to dbrain-processor skill.
+GEMINI_MODEL="${GEMINI_MODEL:-gemini-3-pro-preview}"
+TODOIST_TOOL_PREFIX="${TODOIST_TOOL_PREFIX:-todoist__}"
+REPORT=$(gemini --approval-mode yolo \
+    --model "$GEMINI_MODEL" \
+    --prompt "Today is $TODAY. Execute daily processing according to dbrain-processor skill.
 
 CRITICAL: MCP loads in 10-30 seconds. You are NOT in subprocess — MCP IS running, just initializing.
 
 Algorithm:
-1. Call mcp__todoist__find-tasks-by-date
+1. Call ${TODOIST_TOOL_PREFIX}find-tasks-by-date
 2. Error? Wait 10 sec, read goals/, daily/ files
 3. Call again
 4. Error again? Wait 20 more sec
@@ -50,7 +52,7 @@ DO NOT say MCP unavailable. It is available. Just wait and call." \
     2>&1) || true
 cd "$PROJECT_DIR"
 
-echo "=== Claude output ==="
+echo "=== Gemini output ==="
 echo "$REPORT"
 echo "===================="
 

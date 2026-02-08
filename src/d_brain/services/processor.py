@@ -1,4 +1,4 @@
-"""Claude processing service."""
+"""Gemini processing service."""
 
 import logging
 import os
@@ -12,15 +12,20 @@ from d_brain.services.session import SessionStore
 logger = logging.getLogger(__name__)
 
 DEFAULT_TIMEOUT = 1200  # 20 minutes
+DEFAULT_GEMINI_MODEL = "gemini-3-pro-preview"
+DEFAULT_TODOIST_TOOL_PREFIX = "todoist__"
 
 
-class ClaudeProcessor:
-    """Service for triggering Claude Code processing."""
+class GeminiProcessor:
+    """Service for triggering Gemini CLI processing."""
 
     def __init__(self, vault_path: Path, todoist_api_key: str = "") -> None:
         self.vault_path = Path(vault_path)
         self.todoist_api_key = todoist_api_key
-        self._mcp_config_path = (self.vault_path.parent / "mcp-config.json").resolve()
+        self.model = os.getenv("GEMINI_MODEL", DEFAULT_GEMINI_MODEL)
+        self.todoist_tool_prefix = os.getenv(
+            "TODOIST_TOOL_PREFIX", DEFAULT_TODOIST_TOOL_PREFIX
+        )
 
     def _load_skill_content(self) -> str:
         """Load dbrain-processor skill content for inclusion in prompt.
@@ -41,7 +46,7 @@ class ClaudeProcessor:
         return ""
 
     def _get_session_context(self, user_id: int) -> str:
-        """Get today's session context for Claude.
+        """Get today's session context for Gemini.
 
         Args:
             user_id: Telegram user ID
@@ -125,7 +130,7 @@ week: {year}-W{week:02d}
                 logger.info("Updated MOC-weekly.md with link to %s", summary_path.stem)
 
     def process_daily(self, day: date | None = None) -> dict[str, Any]:
-        """Process daily file with Claude.
+        """Process daily file with Gemini.
 
         Args:
             day: Date to process (default: today)
@@ -148,18 +153,21 @@ week: {year}-W{week:02d}
         # Load skill content directly (@ references don't work in --print mode)
         skill_content = self._load_skill_content()
 
+        todoist_user_info = f"{self.todoist_tool_prefix}user-info"
+        todoist_add_tasks = f"{self.todoist_tool_prefix}add-tasks"
+
         prompt = f"""Сегодня {day}. Выполни ежедневную обработку.
 
 === SKILL INSTRUCTIONS ===
 {skill_content}
 === END SKILL ===
 
-ПЕРВЫМ ДЕЛОМ: вызови mcp__todoist__user-info чтобы убедиться что MCP работает.
+ПЕРВЫМ ДЕЛОМ: вызови {todoist_user_info} чтобы убедиться что MCP работает.
 
 CRITICAL MCP RULE:
-- ТЫ ИМЕЕШЬ ДОСТУП к mcp__todoist__* tools — ВЫЗЫВАЙ ИХ НАПРЯМУЮ
+- ТЫ ИМЕЕШЬ ДОСТУП к {self.todoist_tool_prefix}* tools — ВЫЗЫВАЙ ИХ НАПРЯМУЮ
 - НИКОГДА не пиши "MCP недоступен" или "добавь вручную"
-- Для задач: вызови mcp__todoist__add-tasks tool
+- Для задач: вызови {todoist_add_tasks} tool
 - Если tool вернул ошибку — покажи ТОЧНУЮ ошибку в отчёте
 
 CRITICAL OUTPUT FORMAT:
@@ -170,22 +178,22 @@ CRITICAL OUTPUT FORMAT:
 - If entries already processed, return status report in same HTML format"""
 
         try:
-            # Pass TODOIST_API_KEY to Claude subprocess
+            # Pass TODOIST_API_KEY to Gemini subprocess
             env = os.environ.copy()
             if self.todoist_api_key:
                 env["TODOIST_API_KEY"] = self.todoist_api_key
 
             result = subprocess.run(
                 [
-                    "claude",
-                    "--print",
-                    "--dangerously-skip-permissions",
-                    "--mcp-config",
-                    str(self._mcp_config_path),
-                    "-p",
+                    "gemini",
+                    "--approval-mode",
+                    "yolo",
+                    "--model",
+                    self.model,
+                    "--prompt",
                     prompt,
                 ],
-                cwd=self.vault_path.parent,
+                cwd=self.vault_path,
                 capture_output=True,
                 text=True,
                 timeout=DEFAULT_TIMEOUT,
@@ -194,9 +202,9 @@ CRITICAL OUTPUT FORMAT:
             )
 
             if result.returncode != 0:
-                logger.error("Claude processing failed: %s", result.stderr)
+                logger.error("Gemini processing failed: %s", result.stderr)
                 return {
-                    "error": result.stderr or "Claude processing failed",
+                    "error": result.stderr or "Gemini processing failed",
                     "processed_entries": 0,
                 }
 
@@ -208,15 +216,15 @@ CRITICAL OUTPUT FORMAT:
             }
 
         except subprocess.TimeoutExpired:
-            logger.error("Claude processing timed out")
+            logger.error("Gemini processing timed out")
             return {
                 "error": "Processing timed out",
                 "processed_entries": 0,
             }
         except FileNotFoundError:
-            logger.error("Claude CLI not found")
+            logger.error("Gemini CLI not found")
             return {
-                "error": "Claude CLI not installed",
+                "error": "Gemini CLI not installed",
                 "processed_entries": 0,
             }
         except Exception as e:
@@ -227,7 +235,7 @@ CRITICAL OUTPUT FORMAT:
             }
 
     def execute_prompt(self, user_prompt: str, user_id: int = 0) -> dict[str, Any]:
-        """Execute arbitrary prompt with Claude.
+        """Execute arbitrary prompt with Gemini.
 
         Args:
             user_prompt: User's natural language request
@@ -242,6 +250,8 @@ CRITICAL OUTPUT FORMAT:
         todoist_ref = self._load_todoist_reference()
         session_context = self._get_session_context(user_id)
 
+        todoist_user_info = f"{self.todoist_tool_prefix}user-info"
+
         prompt = f"""Ты - персональный ассистент d-brain.
 
 CONTEXT:
@@ -252,10 +262,10 @@ CONTEXT:
 {todoist_ref}
 === END REFERENCE ===
 
-ПЕРВЫМ ДЕЛОМ: вызови mcp__todoist__user-info чтобы убедиться что MCP работает.
+ПЕРВЫМ ДЕЛОМ: вызови {todoist_user_info} чтобы убедиться что MCP работает.
 
 CRITICAL MCP RULE:
-- ТЫ ИМЕЕШЬ ДОСТУП к mcp__todoist__* tools — ВЫЗЫВАЙ ИХ НАПРЯМУЮ
+- ТЫ ИМЕЕШЬ ДОСТУП к {self.todoist_tool_prefix}* tools — ВЫЗЫВАЙ ИХ НАПРЯМУЮ
 - НИКОГДА не пиши "MCP недоступен" или "добавь вручную"
 - Если tool вернул ошибку — покажи ТОЧНУЮ ошибку в отчёте
 
@@ -271,7 +281,7 @@ CRITICAL OUTPUT FORMAT:
 
 EXECUTION:
 1. Analyze the request
-2. Call MCP tools directly (mcp__todoist__*, read/write files)
+2. Call MCP tools directly ({self.todoist_tool_prefix}*, read/write files)
 3. Return HTML status report with results"""
 
         try:
@@ -281,15 +291,15 @@ EXECUTION:
 
             result = subprocess.run(
                 [
-                    "claude",
-                    "--print",
-                    "--dangerously-skip-permissions",
-                    "--mcp-config",
-                    str(self._mcp_config_path),
-                    "-p",
+                    "gemini",
+                    "--approval-mode",
+                    "yolo",
+                    "--model",
+                    self.model,
+                    "--prompt",
                     prompt,
                 ],
-                cwd=self.vault_path.parent,
+                cwd=self.vault_path,
                 capture_output=True,
                 text=True,
                 timeout=DEFAULT_TIMEOUT,
@@ -298,9 +308,9 @@ EXECUTION:
             )
 
             if result.returncode != 0:
-                logger.error("Claude execution failed: %s", result.stderr)
+                logger.error("Gemini execution failed: %s", result.stderr)
                 return {
-                    "error": result.stderr or "Claude execution failed",
+                    "error": result.stderr or "Gemini execution failed",
                     "processed_entries": 0,
                 }
 
@@ -310,31 +320,34 @@ EXECUTION:
             }
 
         except subprocess.TimeoutExpired:
-            logger.error("Claude execution timed out")
+            logger.error("Gemini execution timed out")
             return {"error": "Execution timed out", "processed_entries": 0}
         except FileNotFoundError:
-            logger.error("Claude CLI not found")
-            return {"error": "Claude CLI not installed", "processed_entries": 0}
+            logger.error("Gemini CLI not found")
+            return {"error": "Gemini CLI not installed", "processed_entries": 0}
         except Exception as e:
             logger.exception("Unexpected error during execution")
             return {"error": str(e), "processed_entries": 0}
 
     def generate_weekly(self) -> dict[str, Any]:
-        """Generate weekly digest with Claude.
+        """Generate weekly digest with Gemini.
 
         Returns:
             Weekly digest report as dict
         """
         today = date.today()
 
+        todoist_user_info = f"{self.todoist_tool_prefix}user-info"
+        todoist_find_completed = f"{self.todoist_tool_prefix}find-completed-tasks"
+
         prompt = f"""Сегодня {today}. Сгенерируй недельный дайджест.
 
-ПЕРВЫМ ДЕЛОМ: вызови mcp__todoist__user-info чтобы убедиться что MCP работает.
+ПЕРВЫМ ДЕЛОМ: вызови {todoist_user_info} чтобы убедиться что MCP работает.
 
 CRITICAL MCP RULE:
-- ТЫ ИМЕЕШЬ ДОСТУП к mcp__todoist__* tools — ВЫЗЫВАЙ ИХ НАПРЯМУЮ
+- ТЫ ИМЕЕШЬ ДОСТУП к {self.todoist_tool_prefix}* tools — ВЫЗЫВАЙ ИХ НАПРЯМУЮ
 - НИКОГДА не пиши "MCP недоступен" или "добавь вручную"
-- Для выполненных задач: вызови mcp__todoist__find-completed-tasks tool
+- Для выполненных задач: вызови {todoist_find_completed} tool
 - Если tool вернул ошибку — покажи ТОЧНУЮ ошибку в отчёте
 
 WORKFLOW:
@@ -357,15 +370,15 @@ CRITICAL OUTPUT FORMAT:
 
             result = subprocess.run(
                 [
-                    "claude",
-                    "--print",
-                    "--dangerously-skip-permissions",
-                    "--mcp-config",
-                    str(self._mcp_config_path),
-                    "-p",
+                    "gemini",
+                    "--approval-mode",
+                    "yolo",
+                    "--model",
+                    self.model,
+                    "--prompt",
                     prompt,
                 ],
-                cwd=self.vault_path.parent,
+                cwd=self.vault_path,
                 capture_output=True,
                 text=True,
                 timeout=DEFAULT_TIMEOUT,
@@ -398,8 +411,8 @@ CRITICAL OUTPUT FORMAT:
             logger.error("Weekly digest timed out")
             return {"error": "Weekly digest timed out", "processed_entries": 0}
         except FileNotFoundError:
-            logger.error("Claude CLI not found")
-            return {"error": "Claude CLI not installed", "processed_entries": 0}
+            logger.error("Gemini CLI not found")
+            return {"error": "Gemini CLI not installed", "processed_entries": 0}
         except Exception as e:
             logger.exception("Unexpected error during weekly digest")
             return {"error": str(e), "processed_entries": 0}

@@ -62,7 +62,7 @@ The Todoist AI MCP server is available as a streamable HTTP service for easy int
 
 **Primary URL (Streamable HTTP):** `https://ai.todoist.net/mcp`
 
-#### Claude Desktop
+#### Gemini Desktop
 
 1. Open Settings → Connectors → Add custom connector
 2. Enter `https://ai.todoist.net/mcp` and complete OAuth authentication
@@ -86,17 +86,17 @@ Create a configuration file:
 
 Then enable the server in Cursor settings if prompted.
 
-#### Claude Code (CLI)
+#### Gemini CLI
 
-Firstly configure Claude so it has a new MCP available using this command:
+Firstly configure Gemini so it has a new MCP available using this command:
 
 ```bash
-claude mcp add --transport http todoist https://ai.todoist.net/mcp
+gemini mcp add --transport http todoist https://ai.todoist.net/mcp
 ```
 
-Then launch `claude`, execute `/mcp`, then select the `todoist` MCP server.
+Then launch `gemini`, execute `/mcp`, then select the `todoist` MCP server.
 
-This will take you through a wizard to authenticate using your browser with Todoist. Once complete you will be able to use todoist in `claude`.
+This will take you through a wizard to authenticate using your browser with Todoist. Once complete you will be able to use todoist in `gemini`.
 
 
 #### Visual Studio Code

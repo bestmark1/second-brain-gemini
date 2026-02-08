@@ -120,7 +120,7 @@ See `.claude/rules/` for format requirements:
 
 Не существует ситуации, когда MCP tools "недоступны". Если ты получил эту инструкцию — у тебя есть доступ к:
 
-- `mcp__todoist__*` — все Todoist операции
+- `todoist__*` — все Todoist операции
 - File read/write — все файловые операции
 
 ЗАПРЕЩЁННЫЕ ПАТТЕРНЫ (НИКОГДА не делай это):
@@ -130,7 +130,7 @@ See `.claude/rules/` for format requirements:
 - Любые инструкции для ручного выполнения
 
 ПРАВИЛЬНЫЙ ПАТТЕРН:
-1. Вызвать mcp__todoist__add-tasks tool
+1. Вызвать todoist__add-tasks tool
 2. Получить результат (успех или ошибка)
 3. Включить результат в HTML отчёт
 
@@ -156,7 +156,7 @@ Reports use Telegram HTML:
 
 ## /do Command Context
 
-When invoked via /do, Claude receives arbitrary user requests. Common patterns:
+When invoked via /do, Gemini receives arbitrary user requests. Common patterns:
 
 **Task Management:**
 - "перенеси просроченные задачи на понедельник"
@@ -175,7 +175,7 @@ When invoked via /do, Claude receives arbitrary user requests. Common patterns:
 
 ## MCP Tools Available
 
-**Todoist (mcp__todoist__*):**
+**Todoist (todoist__*):**
 - `add-tasks` — создать задачи
 - `find-tasks` — найти задачи по тексту
 - `find-tasks-by-date` — задачи за период
@@ -212,7 +212,7 @@ See `skills/graph-builder/` for full documentation.
 1. **Don't rewrite working code** without reason (KISS, DRY, YAGNI)
 2. **Don't add checks** that weren't there — let the agent decide
 3. **Don't propose solutions** without studying git log/diff first
-4. **Don't break architecture** (process.sh → Claude → skill is correct)
+4. **Don't break architecture** (process.sh → Gemini → skill is correct)
 5. **Problems are usually simple** (e.g., sed one-liner for HTML fix)
 
 ---

@@ -10,7 +10,7 @@ from aiogram.types import Message
 from d_brain.bot.formatters import format_process_report
 from d_brain.config import get_settings
 from d_brain.services.git import VaultGit
-from d_brain.services.processor import ClaudeProcessor
+from d_brain.services.processor import GeminiProcessor
 
 router = Router(name="weekly")
 logger = logging.getLogger(__name__)
@@ -25,7 +25,7 @@ async def cmd_weekly(message: Message) -> None:
     status_msg = await message.answer("⏳ Генерирую недельный дайджест...")
 
     settings = get_settings()
-    processor = ClaudeProcessor(settings.vault_path, settings.todoist_api_key)
+    processor = GeminiProcessor(settings.vault_path, settings.todoist_api_key)
     git = VaultGit(settings.vault_path)
 
     async def run_with_progress() -> dict:

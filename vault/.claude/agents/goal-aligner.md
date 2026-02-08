@@ -29,7 +29,7 @@ Extract goal keywords for matching.
 ### Step 2: Get All Active Tasks
 
 ```
-mcp__todoist__find-tasks
+todoist__find-tasks
   responsibleUserFiltering: "all"
   limit: 100
 ```

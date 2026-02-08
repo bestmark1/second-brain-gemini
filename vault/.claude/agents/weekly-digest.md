@@ -23,7 +23,7 @@ Analyzes the past week and generates comprehensive digest report.
 
 2. **Get completed tasks from Todoist:**
    ```
-   mcp__todoist__find-completed-tasks
+   todoist__find-completed-tasks
      since: {monday}
      until: {sunday}
    ```
