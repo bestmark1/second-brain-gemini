@@ -1,56 +1,54 @@
 ---
 type: monthly
-period: YYYY-MM
-updated: YYYY-MM-DD
+period: 2026-03
+updated: 2026-02-10
 ---
 
 # Monthly Focus
 
 ## Top 3 Priorities
 
-### Priority 1: [Your Top Priority]
-<!-- What MUST happen this month? -->
+### Priority 1: Прототип AI-аватара для риэлтора
 
-**Why it matters:** [connection to yearly goal]
+**Why it matters:** шаг Q1 к годовому результату — запуск AI-продукта и первые продажи
 
 **Key Actions:**
-- [ ] Action 1
-- [ ] Action 2
-- [ ] Action 3
+- [ ] Спроектировать промпт-архитектуру агента
+- [ ] Сделать тестовый прототип диалога
+- [ ] Оформить демо-сценарий для показа
 
-**Definition of Done:** [clear outcome]
+**Definition of Done:** работает диалоговый сценарий под задачу риэлтора
 
 ---
 
-### Priority 2: [Second Priority]
+### Priority 2: Первый AI-проект в портфолио
 
-**Why it matters:** [connection to yearly goal]
+**Why it matters:** формирование AI-портфолио и базы кейсов на 2026
 
 **Key Actions:**
-- [ ] Action 1
-- [ ] Action 2
-- [ ] Action 3
+- [ ] Описать требования и архитектуру решения
+- [ ] Собрать и подготовить данные
+- [ ] Реализовать базовый прототип модели
 
-**Definition of Done:** [clear outcome]
+**Definition of Done:** проект опубликован на GitHub с README и есть рабочий демо-пример
 
 ---
 
-### Priority 3: [Third Priority]
+### Priority 3: Система тренировок ≥5 раз в неделю
 
-**Why it matters:** [connection to yearly goal]
+**Why it matters:** фундамент энергии и дисциплины под нагрузку AI-карьеры
 
 **Key Actions:**
-- [ ] Action 1
-- [ ] Action 2
-- [ ] Action 3
+- [ ] Настроить трекер привычек
+- [ ] Назначить еженедельную самопроверку
+- [ ] Зафиксировать даты и время тренировок в календаре
 
-**Definition of Done:** [clear outcome]
+**Definition of Done:** выполнен план тренировок на 4 недели
 
 ---
 
 ## NOT Doing This Month
 
-<!-- What are you consciously saying NO to? -->
 -
 -
 -
@@ -87,7 +85,7 @@ updated: YYYY-MM-DD
 ## Links
 
 - [[0-vision-3y]] - 3-year vision
-- [[1-yearly-2025]] - Annual goals
+- [[1-yearly-2026]] - Annual goals
 - [[3-weekly]] - This week's plan
 
 ---

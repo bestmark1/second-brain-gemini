@@ -1,16 +1,16 @@
+
 ---
 type: vision
 horizon: 3-years
-period: 2025-2027
-updated: YYYY-MM-DD
+period: 2026-2028
+updated: 2026-02-10
 ---
 
-# Vision 2025-2027
+# Vision 2026-2028
 
 ## Life Mission
 
-<!-- Your life direction in one sentence -->
-<!-- Example: "Build meaningful technology while maintaining balance across health, relationships, and personal growth." -->
+Построить независимую AI-карьеру через собственные продукты и фриланс, сохраняя высокую энергию, осознанные отношения и активный образ жизни.
 
 ---
 
@@ -19,72 +19,72 @@ updated: YYYY-MM-DD
 ### Career & Business
 
 **3-Year Vision:**
-<!-- Where do you want to be professionally in 3 years? -->
+Соло-фрилансер в сферах AI и криптовалют. Имею собственный продукт — AI-аватар/агент для риэлторов. Работаю один, совмещаю продажи продукта и проектную работу.
 
 **Key Milestones:**
-- [ ] Milestone 1
-- [ ] Milestone 2
-- [ ] Milestone 3
+- [ ] Запущен AI-аватар для риэлторов с моделью разовых продаж
+- [ ] 50 проданных аватаров в год по средней цене $1200
+- [ ] Годовой доход $120k, из них ~50% продукт и ~50% фриланс
 
 ---
 
 ### Health & Energy
 
 **3-Year Vision:**
-<!-- What does your ideal health look like? -->
+Стабильная форма, низкий процент жира, регулярная физическая активность, высокая дневная продуктивность, качественный сон, отказ от алкоголя.
 
 **Key Milestones:**
-- [ ] Milestone 1
-- [ ] Milestone 2
-- [ ] Milestone 3
+- [ ] Процент жира ≤ 16%
+- [ ] Тренировки 5 раз в неделю без пропусков + ежедневная зарядка
+- [ ] ≥ 355 дней в году без алкоголя, сон 8 часов, рабочая продуктивность до 10 часов
 
 ---
 
 ### Relationships & Family
 
 **3-Year Vision:**
-<!-- How do you want your relationships to evolve? -->
+Совместное проживание с партнёром, семейный формат, отношения с доверием, глубиной, стабильностью и лёгкостью. Узкий круг близких и более сильных по уровню людей.
 
 **Key Milestones:**
-- [ ] Milestone 1
-- [ ] Milestone 2
-- [ ] Milestone 3
+- [ ] Совместное проживание с партнёром (брак не критичен, дети возможны)
+- [ ] Регулярные ритуалы: ежемесячные свидания, совместная зарядка/йога
+- [ ] Совместные поездки: заграница 2 раза в год, региональные — ежемесячно
 
 ---
 
 ### Personal Growth
 
 **3-Year Vision:**
-<!-- What skills, habits, or mindset changes do you want? -->
+Уверенный практик в AI и data science (ниже middle, но сильный уровень), более проявленный, внимательный и заботливый. Регулярное саморазвитие и работа с внутренними установками.
 
 **Key Milestones:**
-- [ ] Milestone 1
-- [ ] Milestone 2
-- [ ] Milestone 3
+- [ ] 5 AI-проектов в портфолио
+- [ ] 10 проектов на GitHub
+- [ ] Системное обучение не менее 10 часов в неделю + привычка ежедневной зарядки и совместного досуга
 
 ---
 
 ### Financial
 
 **3-Year Vision:**
-<!-- What does financial security look like for you? -->
+Финансовая устойчивость, высокая норма сбережений, капитал и инвестиции в недвижимость, отсутствие долгов.
 
 **Key Milestones:**
-- [ ] Milestone 1
-- [ ] Milestone 2
-- [ ] Milestone 3
+- [ ] Подушка безопасности = 6 месяцев расходов
+- [ ] Накопления ≥ $20,000
+- [ ] Инвестиции в недвижимость, долгов 0, откладывается до 80% дохода
 
 ---
 
 ### Creativity & Joy
 
 **3-Year Vision:**
-<!-- What brings you joy? How will you nurture it? -->
+Активный образ жизни, сезонный спорт и творческие проекты. Жизнь между странами с фокусом на природу и движение.
 
 **Key Milestones:**
-- [ ] Milestone 1
-- [ ] Milestone 2
-- [ ] Milestone 3
+- [ ] Регулярные сезоны: сноубординг зимой, серфинг при проживании у океана
+- [ ] Творческие проекты в формате string-art
+- [ ] Формат жизни: ~6 месяцев Бали, ~6 месяцев Россия ближе к горам, без потери активности
 
 ---
 
@@ -99,10 +99,11 @@ updated: YYYY-MM-DD
 
 ## Links
 
-- [[1-yearly-2025]] - This year's goals
+- [[1-yearly-2026]] - This year's goals
 - [[2-monthly]] - Current month focus
 - [[3-weekly]] - This week's plan
 
 ---
 
-*Next Review: Q1 2025*
+*Next Review: Q1 2026*
+```

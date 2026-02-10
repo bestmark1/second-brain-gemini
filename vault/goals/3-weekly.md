@@ -1,7 +1,7 @@
 ---
 type: weekly
-week: YYYY-WWW
-updated: YYYY-MM-DD
+week: 2026-W07
+updated: 2026-02-10
 ---
 
 # Weekly Focus
@@ -9,17 +9,15 @@ updated: YYYY-MM-DD
 ## ONE Big Thing
 
 > **If I accomplish nothing else, I will:**
-> [Single most important outcome for this week]
-
-<!-- This is read by the bot during daily processing -->
+> Спроектировать и оформить промпт-архитектуру AI-аватара для риэлтора: готовый system prompt, роли и режимы поведения агента, шаблоны типовых ответов.
 
 ---
 
 ## Week at a Glance
 
-**Week:** [X] of 52
-**Energy Level:** [High/Medium/Low]
-**Available Hours:** [X] hours focused work
+**Week:** 7 of 52
+**Energy Level:** Medium
+**Available Hours:** 25 hours focused work
 
 ---
 
@@ -27,19 +25,19 @@ updated: YYYY-MM-DD
 
 ### Must Do (Non-negotiable)
 
-- [ ] Task 1 — Связь: [[1-yearly-2025#Goal]]
-- [ ] Task 2
-- [ ] Task 3
+- [ ] Написать system prompt агента — Связь: [[1-yearly-2026#Career & Business]]
+- [ ] Описать роли и режимы поведения агента
+- [ ] Подготовить шаблоны типовых ответов риэлтора
 
 ### Should Do (Important)
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Сделать 3–5 тестовых диалогов по сценариям
+- [ ] Отрефакторить структуру промпта и блоки инструкций
 
 ### Could Do (If time permits)
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Оформить документ архитектуры агента
+- [ ] Подготовить демо-скрипт диалога
 
 ---
 
@@ -47,33 +45,33 @@ updated: YYYY-MM-DD
 
 ### Monday
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Структура system prompt
+- [ ] Черновик ролей агента
 
 ### Tuesday
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Режимы поведения
+- [ ] Ограничения и правила ответов
 
 ### Wednesday
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Шаблоны типовых ответов (часть 1)
+- [ ] Тест диалогов
 
 ### Thursday
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Шаблоны типовых ответов (часть 2)
+- [ ] Тест диалогов
 
 ### Friday
 
-- [ ] Task 1
-- [ ] Task 2
+- [ ] Сборка финальной версии промпта
+- [ ] Прогон сценариев
 
 ### Weekend
 
 - [ ] Rest / Family time
-- [ ] Optional task
+- [ ] Лёгкий пересмотр и правки
 
 ---
 
@@ -90,9 +88,9 @@ updated: YYYY-MM-DD
 
 | Habit | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |-------|-----|-----|-----|-----|-----|-----|-----|
-| [Habit 1] | | | | | | | |
-| [Habit 2] | | | | | | | |
-| [Habit 3] | | | | | | | |
+| Тренировка | | | | | | | |
+| Зарядка | | | | | | | |
+| Обучение 1+ час | | | | | | | |
 
 ---
 
@@ -119,9 +117,9 @@ updated: YYYY-MM-DD
 ## Links
 
 - [[2-monthly]] - Monthly priorities
-- [[1-yearly-2025]] - Yearly goals
-- Previous: [[3-weekly-YYYY-WXX]]
+- [[1-yearly-2026]] - Yearly goals
+- Previous: [[3-weekly-2026-W06]]
 
 ---
 
-*Week Started: YYYY-MM-DD*
+*Week Started: 2026-02-09*

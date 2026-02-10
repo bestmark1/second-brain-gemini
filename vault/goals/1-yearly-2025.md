@@ -1,76 +1,71 @@
 ---
 type: yearly
-period: 2025
-updated: YYYY-MM-DD
+period: 2026
+updated: 2026-02-10
 ---
 
-# Goals 2025
+# Goals 2026
 
 ## Annual Theme
 
-<!-- One word or phrase that defines this year -->
-<!-- Example: "Foundation", "Growth", "Balance" -->
+Фундамент AI-карьеры
 
 ---
 
 ## Career & Business
 
-### Goal 1: [Your Goal]
-<!-- What do you want to achieve professionally? -->
+### Goal 1: Портфолио из 5 AI-проектов + первые платные кейсы и первые продажи AI-аватара
 
 **Success Metrics:**
-- [ ] Metric 1
-- [ ] Metric 2
+- [ ] ≥ 5 платных AI-кейсов
+- [ ] ≥ 3 продажи AI-аватара для риэлторов
+- [ ] Доход к концу года ≥ $2000/мес
 
 **Quarterly Milestones:**
-- Q1: [milestone]
-- Q2: [milestone]
-- Q3: [milestone]
-- Q4: [milestone]
+- Q1: Прототип AI-аватара
+- Q2: Первый платный AI-кейс
+- Q3: Первые продажи аватара (1–2)
+- Q4: Довести платные кейсы до 5
 
 ---
 
 ## Health & Energy
 
-### Goal 1: [Your Goal]
-<!-- What health habits do you want to build? -->
+### Goal 1: Устойчивый режим тренировок ≥5 раз в неделю
 
 **Success Metrics:**
-- [ ] Metric 1
-- [ ] Metric 2
+- [ ] ≥ 8 недель тренировок без пропусков
+- [ ] Процент жира ≤ 18%
 
 ---
 
 ## Relationships
 
-### Goal 1: [Your Goal]
-<!-- How do you want to improve your relationships? -->
+### Goal 1: Создать стабильные долгосрочные отношения
 
 **Success Metrics:**
-- [ ] Metric 1
-- [ ] Metric 2
+- [ ] Постоянные отношения ≥ 3 месяцев
+- [ ] Совместная активность ≥ 1 раза в неделю
 
 ---
 
 ## Personal Growth
 
-### Goal 1: [Your Goal]
-<!-- What skills or habits do you want to develop? -->
+### Goal 1: Собрать портфолио AI-проектов и GitHub-базу
 
 **Success Metrics:**
-- [ ] Metric 1
-- [ ] Metric 2
+- [ ] 5 AI-проектов в портфолио
+- [ ] 5 проектов на GitHub
 
 ---
 
 ## Financial
 
-### Goal 1: [Your Goal]
-<!-- What financial milestones do you want to reach? -->
+### Goal 1: Выйти на доход $10 000 в месяц
 
 **Success Metrics:**
-- [ ] Metric 1
-- [ ] Metric 2
+- [ ] Доход $10k/мес держится ≥ 3 месяцев подряд
+- [ ] Годовые накопления ≥ $50 000
 
 ---
 
@@ -78,11 +73,11 @@ updated: YYYY-MM-DD
 
 | Area | Goal | Progress | Status |
 |------|------|----------|--------|
-| Career | [goal] | 0% | --- |
-| Health | [goal] | 0% | --- |
-| Relationships | [goal] | 0% | --- |
-| Growth | [goal] | 0% | --- |
-| Financial | [goal] | 0% | --- |
+| Career | 5 AI проектов + кейсы + аватар | 0% | --- |
+| Health | ≥5 тренировок/нед | 0% | --- |
+| Relationships | стабильные отношения | 0% | --- |
+| Growth | AI портфолио + GitHub | 0% | --- |
+| Financial | $10k/мес | 0% | --- |
 
 ---
 
