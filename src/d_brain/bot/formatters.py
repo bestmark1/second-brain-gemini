@@ -163,11 +163,18 @@ def format_process_report(report: dict[str, Any]) -> str:
 
     if "report" in report:
         raw_report = report["report"]
+        # Normalize common HTML tags to plain text/line breaks
+        raw_report = raw_report.replace("<br/>", "\n").replace("<br>", "\n")
+        raw_report = raw_report.replace("<ul>", "").replace("</ul>", "")
+        raw_report = raw_report.replace("<li>", "- ").replace("</li>", "\n")
+
         if raw_report and "<b>" not in raw_report:
             escaped = html.escape(raw_report.strip())
             escaped = escaped.replace("\n", "<br>")
             raw_report = f"📊 <b>Обработка завершена</b><br>{escaped}"
-            
+
+        raw_report = raw_report.replace("\n", "<br>")
+           
         # Sanitize HTML, keeping allowed tags
         sanitized = sanitize_telegram_html(raw_report)
 
