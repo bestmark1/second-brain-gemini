@@ -8,6 +8,8 @@ Map of Content for weekly summaries.
 
 ## Previous Weeks
 
+- [[summaries/2026-W07-summary.md|2026-W07-summary]]
+
 <!-- Links to past week summaries -->
 
 ---
