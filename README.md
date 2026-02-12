@@ -1116,11 +1116,13 @@ nano .env
 
 Содержимое:
 ```bash
+GEMINI_API_KEY=
 TELEGRAM_BOT_TOKEN=7123456789:AAHxxxxxxxxxxxxxxxxxxxxxxxxxx
 DEEPGRAM_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TODOIST_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 VAULT_PATH=./vault
 ALLOWED_USER_IDS=[123456789]
+GEMINI_MODEL=
 ```
 
 > В `ALLOWED_USER_IDS` обязательно сохраняйте квадратные скобки!

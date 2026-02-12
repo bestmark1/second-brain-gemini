@@ -165,6 +165,24 @@ def normalize_report_layout(text: str) -> str:
     # Return HTML with explicit line breaks for Telegram
     return text.replace("\n", "<br>")
 
+def to_readable_text(text: str) -> str:
+    if not text:
+        return ""
+
+    # HTML -> plain text
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"</?(ul|ol|li|p|div)\b[^>]*>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"</?(b|i|u|code|pre|a)\b[^>]*>", "", text, flags=re.IGNORECASE)
+
+    # Remove parentheses
+    text = text.replace("(", " ").replace(")", "")
+
+    # Cleanup spacing
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+
+    return text
+
 
 def format_process_report(report: dict[str, Any]) -> str:
     """Format processing report for Telegram HTML.
@@ -183,18 +201,9 @@ def format_process_report(report: dict[str, Any]) -> str:
         return f"❌ <b>Ошибка:</b> {error_msg}"
 
     if "report" in report:
-        raw_report = report["report"]
-        # Normalize common HTML tags to plain text/line breaks
-        raw_report = raw_report.replace("<br/>", "\n").replace("<br>", "\n")
-        raw_report = raw_report.replace("<ul>", "").replace("</ul>", "")
-        raw_report = raw_report.replace("<li>", "- ").replace("</li>", "\n")
+    raw_report = str(report["report"])
+    return to_readable_text(raw_report)
 
-        if raw_report and "<b>" not in raw_report:
-            escaped = html.escape(raw_report.strip())
-            escaped = escaped.replace("\n", "<br>")
-            raw_report = f"📊 <b>Обработка завершена</b><br>{escaped}"
-
-        raw_report = raw_report.replace("\n", "<br>")
            
         # Sanitize HTML, keeping allowed tags
         sanitized = sanitize_telegram_html(raw_report)
