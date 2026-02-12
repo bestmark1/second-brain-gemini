@@ -144,6 +144,27 @@ def truncate_html(text: str, max_length: int = 4096) -> str:
 
     return truncated + "..." + closing_tags
 
+def normalize_report_layout(text: str) -> str:
+    """Normalize mixed HTML/plain output into readable Telegram HTML."""
+    if not text:
+        return ""
+
+    # Convert block/list HTML to plain line structure first
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"</?(ul|ol|p|div)\b[^>]*>", "\n", text, flags=re.IGNORECASE)
+    text = re.sub(r"<li\b[^>]*>", "- ", text, flags=re.IGNORECASE)
+    text = re.sub(r"</li>", "\n", text, flags=re.IGNORECASE)
+
+    # Remove parentheses as requested
+    text = text.replace("(", " - ").replace(")", "")
+
+    # Clean spacing/newlines
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+
+    # Return HTML with explicit line breaks for Telegram
+    return text.replace("\n", "<br>")
+
 
 def format_process_report(report: dict[str, Any]) -> str:
     """Format processing report for Telegram HTML.
