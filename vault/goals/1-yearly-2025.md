@@ -1,71 +1,76 @@
 ---
 type: yearly
-period: 2026
-updated: 2026-02-10
+period: 2025
+updated: YYYY-MM-DD
 ---
 
-# Goals 2026
+# Goals 2025
 
 ## Annual Theme
 
-Фундамент AI-карьеры
+<!-- One word or phrase that defines this year -->
+<!-- Example: "Foundation", "Growth", "Balance" -->
 
 ---
 
 ## Career & Business
 
-### Goal 1: Портфолио из 5 AI-проектов + первые платные кейсы и первые продажи AI-аватара
+### Goal 1: [Your Goal]
+<!-- What do you want to achieve professionally? -->
 
 **Success Metrics:**
-- [ ] ≥ 5 платных AI-кейсов
-- [ ] ≥ 3 продажи AI-аватара для риэлторов
-- [ ] Доход к концу года ≥ $2000/мес
+- [ ] Metric 1
+- [ ] Metric 2
 
 **Quarterly Milestones:**
-- Q1: Прототип AI-аватара
-- Q2: Первый платный AI-кейс
-- Q3: Первые продажи аватара (1–2)
-- Q4: Довести платные кейсы до 5
+- Q1: [milestone]
+- Q2: [milestone]
+- Q3: [milestone]
+- Q4: [milestone]
 
 ---
 
 ## Health & Energy
 
-### Goal 1: Устойчивый режим тренировок ≥5 раз в неделю
+### Goal 1: [Your Goal]
+<!-- What health habits do you want to build? -->
 
 **Success Metrics:**
-- [ ] ≥ 8 недель тренировок без пропусков
-- [ ] Процент жира ≤ 18%
+- [ ] Metric 1
+- [ ] Metric 2
 
 ---
 
 ## Relationships
 
-### Goal 1: Создать стабильные долгосрочные отношения
+### Goal 1: [Your Goal]
+<!-- How do you want to improve your relationships? -->
 
 **Success Metrics:**
-- [ ] Постоянные отношения ≥ 3 месяцев
-- [ ] Совместная активность ≥ 1 раза в неделю
+- [ ] Metric 1
+- [ ] Metric 2
 
 ---
 
 ## Personal Growth
 
-### Goal 1: Собрать портфолио AI-проектов и GitHub-базу
+### Goal 1: [Your Goal]
+<!-- What skills or habits do you want to develop? -->
 
 **Success Metrics:**
-- [ ] 5 AI-проектов в портфолио
-- [ ] 5 проектов на GitHub
+- [ ] Metric 1
+- [ ] Metric 2
 
 ---
 
 ## Financial
 
-### Goal 1: Выйти на доход $10 000 в месяц
+### Goal 1: [Your Goal]
+<!-- What financial milestones do you want to reach? -->
 
 **Success Metrics:**
-- [ ] Доход $10k/мес держится ≥ 3 месяцев подряд
-- [ ] Годовые накопления ≥ $50 000
+- [ ] Metric 1
+- [ ] Metric 2
 
 ---
 
@@ -73,11 +78,11 @@ updated: 2026-02-10
 
 | Area | Goal | Progress | Status |
 |------|------|----------|--------|
-| Career | 5 AI проектов + кейсы + аватар | 0% | --- |
-| Health | ≥5 тренировок/нед | 0% | --- |
-| Relationships | стабильные отношения | 0% | --- |
-| Growth | AI портфолио + GitHub | 0% | --- |
-| Financial | $10k/мес | 0% | --- |
+| Career | [goal] | 0% | --- |
+| Health | [goal] | 0% | --- |
+| Relationships | [goal] | 0% | --- |
+| Growth | [goal] | 0% | --- |
+| Financial | [goal] | 0% | --- |
 
 ---
 
