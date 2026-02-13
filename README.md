@@ -280,7 +280,7 @@ Fork — это ваша личная копия проекта. Все ваши
   <img width="600" alt="Arc_27_December_2025_Uw5hbtiu" src="https://github.com/user-attachments/assets/c4cd5d39-f690-456b-892d-615c36460dba" />
 </p>
 
-Теперь у вас есть своя копия по адресу: `https://github.com/ВАШ_ЛОГИН/agent-second-brain`
+Теперь у вас есть своя копия по адресу: `https://github.com/ВАШ_ЛОГИН/second-brain-gemini`
 
 > ⚠️ **ВАЖНО: Сделайте репозиторий приватным!**
 >
@@ -320,12 +320,12 @@ Fork — это ваша личная копия проекта. Все ваши
 3. Напечатайте адрес вашего репозитория:
 
 ```
-https://github.com/ВАШ_ЛОГИН/agent-second-brain.git
+https://github.com/ВАШ_ЛОГИН/second-brain-gemini.git
 ```
 
 > **Важно:** Замените `ВАШ_ЛОГИН` на ваш реальный логин GitHub!
 > Например, если ваш логин `ivan_petrov`, введите:
-> `https://github.com/ivan_petrov/agent-second-brain.git`
+> `https://github.com/ivan_petrov/second-brain-gemini.git`
 
 4. Нажмите Enter
 5. Откроется окно выбора папки. Выберите папку «Документы» (Documents) и нажмите **Select as Repository Destination**
@@ -510,7 +510,7 @@ VS Code скачал проект на ваш компьютер и открыл
 
 | Что проверить | Ожидаемый результат |
 |---------------|---------------------|
-| У вас есть свой репозиторий | Откройте `github.com/ВАШ_ЛОГИН/agent-second-brain` — видите свои файлы |
+| У вас есть свой репозиторий | Откройте `github.com/ВАШ_ЛОГИН/second-brain-gemini` — видите свои файлы |
 | На компьютере есть папка проекта | В VS Code слева видны папки `vault`, `src` и файлы |
 | Цели заполнены | Откройте `vault/goals/` — там ваши цели, не шаблон |
 | Изменения в GitHub | На сайте github.com видны ваши изменения |
@@ -528,7 +528,7 @@ VS Code скачал проект на ваш компьютер и открыл
 | Ваш Telegram ID | @userinfobot в Telegram | `123456789` |
 | Deepgram API Key | console.deepgram.com | Длинная строка |
 | Todoist API Token | todoist.com → Settings | 40 символов |
-
+| GEMINI API Key | aistudio.google.com/api-keys | Длинная строка |
 ---
 
 ### 2.1 Telegram Bot Token
@@ -590,6 +590,21 @@ VS Code скачал проект на ваш компьютер и открыл
 <p align="center">
   <img width="600" alt="Arc_27_December_2025_FlpSkZgR" src="https://github.com/user-attachments/assets/eb676e25-1633-44e4-b90e-6d066a3b46d2" />
 </p>
+
+---
+
+### 2.5 Получение и добавление Gemini API ключа
+
+1. Откройте [Google AI Studio](https://aistudio.google.com/app/apikey).
+2. Нажмите **Create API key**.
+3. Подключите billing 
+3. Скопируйте созданный ключ.
+4. Добавьте ключ в файл `.env`:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-3-flash-preview
+
 
 ---
 

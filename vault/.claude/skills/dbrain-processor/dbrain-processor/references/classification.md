@@ -27,7 +27,7 @@ Based on user's work context (see [ABOUT.md](ABOUT.md)):
 ### AI & Tech
 Инструменты, модели, промпты, пайплайны, агенты
 
-**Keywords:** GPT, Claude, модель, агент, API, пайплайн, автоматизация, интеграция
+**Keywords:** GPT, Gemini, модель, агент, API, пайплайн, автоматизация, интеграция
 
 **→ Category:** learning или project → thoughts/
 
