@@ -110,7 +110,7 @@
 > **Если вы запутались на каком-то шаге**
 >
 > Не переживайте! Откройте [ChatGPT](https://chat.openai.com) или Gemini и напишите:
-> «Помоги разобраться с этой инструкцией, я застрял на шаге [номер шага]. Вот ссылка: https://github.com/ВАШ_ЛОГИН/agent-second-brain»
+> «Помоги разобраться с этой инструкцией, я застрял на шаге [номер шага]. Вот ссылка: https://github.com/ВАШ_ЛОГИН/second-brain-gemini»
 >
 > Он прочитает инструкцию и поможет вам пошагово.
 
@@ -601,10 +601,12 @@ VS Code скачал проект на ваш компьютер и открыл
 3. Скопируйте созданный ключ.
 4. Добавьте ключ в файл `.env`:
 
-```env
-GEMINI_API_KEY=your_api_key_here
-GEMINI_MODEL=gemini-3-flash-preview
+nano /root/projects/second-brain-gemini/.env
 
+# вести ключ из oogle AI Studio
+GEMINI_API_KEY=your_api_key_here
+# если billing не подключен, то используйте: gemini-2.5-flash-light
+GEMINI_MODEL=gemini-3-flash-preview
 
 ---
 
@@ -616,6 +618,9 @@ GEMINI_MODEL=gemini-3-flash-preview
 | Ваш Telegram ID | Число вида `123456789` |
 | Deepgram API Key | Длинная строка букв и цифр |
 | Todoist API Token | Строка из 40 символов |
+| GEMINI API Key | aistudio.google.com/api-keys | Длинная строка |
+| GEMINI Model | gemini-3-flash-preview |
+
 
 > **Сохраните все токены** в надёжное место. Они понадобятся при настройке сервера.
 
